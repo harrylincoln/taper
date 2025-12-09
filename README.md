@@ -6,9 +6,9 @@ Taper is a small macOS-friendly daemon that lets you **dial your network
 quality up or down**, in real time. It exposes:
 
 - A **local HTTP proxy** that applies throttling (latency + bandwidth
-  shaping)\
+  shaping)
 - A **local REST API** (`http://127.0.0.1:5507`) for controlling
-  profiles\
+  profiles
 - A **Chrome extension** that acts as a remote control (slider,
   buttons, hotkeys)
 
@@ -20,7 +20,7 @@ debug video streaming, or reproduce connection-sensitive bugs.
 ## Option 1: Homebrew (recommended)
 
 ```bash
-brew tap yourname/taper
+brew tap harrylincoln/taper
 brew install taper
 ```
 
