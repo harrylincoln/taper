@@ -38,7 +38,7 @@ checksum:
 
 brews:
   - name: taper
-    tap:
+    repository:
       owner: harrylincoln
       name: homebrew-taper
     commit_author:
