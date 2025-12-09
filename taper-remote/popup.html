@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Taper Remote</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        padding: 12px;
+        min-width: 220px;
+      }
+      h1 {
+        font-size: 16px;
+        margin: 0 0 8px;
+      }
+      .level-display {
+        margin-bottom: 8px;
+      }
+      .buttons {
+        display: flex;
+        gap: 8px;
+        margin-top: 8px;
+      }
+      button {
+        flex: 1;
+        padding: 6px 8px;
+        cursor: pointer;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Taper Remote</h1>
+    <div class="level-display">
+      Level: <span id="level">?</span>
+    </div>
+    <input id="slider" type="range" min="1" max="10" value="10" />
+    <div class="buttons">
+      <button id="down">Worse</button>
+      <button id="up">Better</button>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

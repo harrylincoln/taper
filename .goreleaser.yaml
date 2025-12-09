@@ -1,0 +1,59 @@
+project_name: taper
+
+release:
+  github:
+    owner: harrylincoln
+    name: taper
+
+  draft: false
+  prerelease: false
+
+# Global build settings
+builds:
+  - id: taper
+    main: ./cmd/taper
+    binary: taper
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+
+# Archives for downloads (GitHub Releases)
+archives:
+  - id: taper-archive
+    builds:
+      - taper
+    format: tar.gz
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    files:
+      - LICENSE
+      - README.md
+
+# Checksums for release artifacts
+checksum:
+  name_template: "checksums.txt"
+
+# Homebrew tap / formula config
+brews:
+  - name: taper
+    tap:
+      owner: harrylincoln
+      name: homebrew-taper
+    commit_author:
+      name: yourname
+      email: harrylincoln0612@gmail.com
+    homepage: https://github.com/harrylincoln/taper
+    description: "Local proxy that lets you dial your network quality for testing calls and bad Wi-Fi."
+    license: "MIT"
+    skip_upload: false
+    install: |
+      bin.install "taper"
+    test: |
+      system "#{bin}/taper", "--help"
+
+# Metadata
+env:
+  - CGO_ENABLED=0
